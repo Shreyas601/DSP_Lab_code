@@ -1,0 +1,10 @@
+a = 1+mod(236,3);
+y1 = sin(2.*pi.*200.*a.*t);
+y2 = sin(2.*pi.*220.*a.*t);
+Fs = 1000;
+T = 1/Fs;
+L = 5000;
+t = (0:L-1)*T;
+y = y1 + y2;
+y_normalized = y/(max(abs(y)));
+audiowrite("audio.wav",y_normalized,Fs);
